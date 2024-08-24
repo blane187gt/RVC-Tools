@@ -22,10 +22,7 @@ if __name__ == '__main__':
     voice_models = ignore_files(rvc_models_dir)
 
     with gr.Blocks(title='CoverGen Lite - Politrees', theme="Hev832/Applio") as app:
-      gr.HTML("<center><h1>Welcome to CoverGen Lite - Politrees</h1></center>")
-            
-        
-        
+      gr.HTML("<center><h1>Welcome to CoverGen Lite - Politrees</h1></center>")     
         with gr.Tab("Voice Conversion"):
             with gr.Row(equal_height=False):
                 with gr.Column(scale=1, variant='panel'):
