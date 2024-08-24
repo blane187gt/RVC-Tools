@@ -16,12 +16,6 @@ rvc_models_dir = os.path.join(BASE_DIR, 'rvc_models')
 output_dir = os.path.join(BASE_DIR, 'song_output')
 
 
-warning = sys.argv[1]
-
-if warning == 'True':
-    warning = True
-elif warning == 'False':
-    warning = False
 
 
 if __name__ == '__main__':
@@ -31,11 +25,7 @@ if __name__ == '__main__':
       gr.HTML("<center><h1>Welcome to CoverGen Lite - Politrees</h1></center>")
             
         
-        if warning:
-            with gr.Column(variant='panel'):
-                gr.HTML("<center><h2>This space is running too slow due to a weak server, so I made a Google Colab notebook to work faster with this interface: <a href='https://colab.research.google.com/drive/1HzuPgICRrjqUWQWb5Zn-l07m099-n-Nr'>Google Colab Notebook</a>.</h2></center>")
-               
-  
+        
         with gr.Tab("Voice Conversion"):
             with gr.Row(equal_height=False):
                 with gr.Column(scale=1, variant='panel'):
