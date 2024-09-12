@@ -1867,20 +1867,10 @@ with gr.Blocks(title="Easy GUI") as app:
             with gr.Row():
                 gr.Markdown(
                 """
-                Made with ❤ by Rejekts | Support her on [Ko-Fi](https://ko-fi.com/rejekts)
+                Made with ❤ by Rejekts | Support him on [Ko-Fi](https://ko-fi.com/rejekts)
                 """
                 )
-
-        def has_two_files_in_pretrained_folder():
-            pretrained_folder = "./pretrained/"
-            if not os.path.exists(pretrained_folder):
-                return False
-
-            files_in_folder = os.listdir(pretrained_folder)
-            num_files = len(files_in_folder)
-            return num_files >= 2
-   
-            print("Pretrained weights are downloaded. Training tab enabled!\n-------------------------------")       
+       
             with gr.TabItem("Train"):
                 with gr.Row():
                     with gr.Column():
