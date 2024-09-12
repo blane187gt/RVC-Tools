@@ -1525,6 +1525,22 @@ with gr.Blocks(title="Easy GUI") as app:
                     outputs=[spk_item],
                 )
                 with gr.Row():
+                    with gr.Tabs():
+                        with gr.TabItem("Download Voice Models"):
+                            with gr.Row():
+                                url=gr.Textbox(label="Huggingface or Google Drive Link:")
+                            with gr.Row():
+                                model = gr.Textbox(label="Name of the model (without spaces):")
+                            download_button=gr.Button("Download")
+                            with gr.Row():
+                                status_bar=gr.Textbox(label="Download Status")
+                            download_button.click(fn=download_from_url, inputs=[url, model], outputs=[status_bar])
+            with gr.Row():
+                gr.Markdown(
+                """
+                Made with ❤ by Rejekts | Support him on [Ko-Fi](https://ko-fi.com/rejekts)
+                """
+                )
                     but0 = gr.Button("Convert", variant="primary")
             with gr.Row():
                 with gr.Column():
@@ -1855,21 +1871,7 @@ with gr.Blocks(title="Easy GUI") as app:
                         [vc_output3],
                     )
                     but1.click(fn=lambda: easy_uploader.clear())
-        with gr.TabItem("Download Voice Models"):
-            with gr.Row():
-                url=gr.Textbox(label="Huggingface or Google Drive Link:")
-            with gr.Row():
-                model = gr.Textbox(label="Name of the model (without spaces):")
-                download_button=gr.Button("Download")
-            with gr.Row():
-                status_bar=gr.Textbox(label="Download Status")
-                download_button.click(fn=download_from_url, inputs=[url, model], outputs=[status_bar])
-            with gr.Row():
-                gr.Markdown(
-                """
-                Made with ❤ by Rejekts | Support him on [Ko-Fi](https://ko-fi.com/rejekts)
-                """
-                )
+        
        
             with gr.TabItem("Train"):
                 with gr.Row():
